@@ -14,7 +14,7 @@ This project is a backend service developed for managing partners and performing
    - Fetch details of a specific partner using their unique `id`.
      
 2. **Load All Partners**
-   - Fetch details of all partners registeres.
+   - Fetch details of all registered partners.
 
 3. **Search Nearest Partner**
    - Given a specific location (longitude and latitude), the API returns the nearest partner whose coverage area includes the location.
@@ -58,7 +58,7 @@ To run the project, make sure you have the following installed:
      DB_USER=your_db_user
      DB_PASSWORD=your_db_password
      DB_NAME=your_db_name
-     DB_PORT=3030
+     DB_PORT=3000
 
 4. Start the server in development mode:
    ```bash
@@ -96,7 +96,7 @@ The server will be running on http://localhost:3000.
 
 - **Endpoint**: `GET /:id`
 - **Description**: Retrieves a partner's details by its ID.
-- **Request Example: http://localhost:3030/1**
+- **Request Example: http://localhost:3000/30**
 - **Response Example**:
   ```bash
     {
@@ -145,10 +145,31 @@ The server will be running on http://localhost:3000.
 		  ]
 	  }
    }
-### 2. Search Nearest Partner
 
+### 3. Load All Partners
 
-
+- **Endpoint**: `GET /allPartners`
+- **Description**: Retrieves all partner's details.
+- **Request Example**: http://localhost:3000/allPartners
+  
+### 4. Search Nearest Partner
+- **Endpoint**: `GET /searchPartner`
+- **Description**: Retrieves the nearest partner which the coverage area includes the location.
+- **Request Example:**
+  ```json
+  {
+	"location": [-46.703, -23.630]
+  }
+- **Response Example**:
+  ```bash
+  [
+	{
+		"id": "29",
+		"tradingName": "Ze da Ambev",
+		"ownerName": "Eduardo Pipoca",
+		"document": "22.15.127.213/0001-56.752/0001-90"
+	}
+  ]
 
 
 
