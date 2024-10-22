@@ -72,7 +72,7 @@ const insertPartner = async (req, res) => {
             }]
         )
 
-        return res.status(201).json(insertedPartner);
+        return res.status(201).json('Partner successfully inserted.');
     } catch (error) {
         return res.status(400).json({ mensagem: error.message });
     }

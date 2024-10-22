@@ -7,8 +7,8 @@ const searchPartner = require('./controllers/searchPartner.js');
 const routes = express();
 
 routes.get('/searchPartner', searchPartner);
+routes.get('/allPartners', getAllPartners);
 routes.get('/:id', loadPartnerById);
-routes.get('/', getAllPartners);
 routes.post('/insertPartner', insertPartner);
 
 module.exports = routes;

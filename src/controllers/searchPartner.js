@@ -54,7 +54,8 @@ const searchPartner = async (req, res) => {
                 }
             };
         }
-        return res.status(200).json(idMinDistance);
+        const partner = await knex('partner').select('*').where('partner.id', idMinDistance);
+        return res.status(200).json(partner);
     } catch (error) {
         return res.json({ error: error.message })
     }
