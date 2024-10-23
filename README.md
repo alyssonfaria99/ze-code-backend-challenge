@@ -60,7 +60,9 @@ To run the project, make sure you have the following installed:
      DB_NAME=your_db_name
      DB_PORT=3000
 
-4. Start the server in development mode:
+4. Use schema.sql code to create your database in a MySQL environment;
+
+5. Start the server in development mode:
    ```bash
     npm run dev
    
